@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package protos;
+
+import "google/protobuf/wrappers.proto";
+
+enum UserType {
+    SELLER = 0;
+    BUYER  = 1;
+}
+
+message User {
+    string id                               = 1;
+    string user_name                        = 2;
+    string name                             = 3;
+    google.protobuf.StringValue last_name   = 4;
+    string email                            = 5;
+    string password                         = 6;
+    optional UserType user_type             = 7;
+    int64 created_at                        = 8;
+    google.protobuf.Int64Value updated_at   = 9; 
+}
+
+message CreateUserCmd {
+    string user_name            = 1;
+    string name                 = 2;
+    optional string last_name   = 3;
+    string email                = 4;
+    string password             = 5;
+    optional UserType user_type = 6;
+}
+
+message LoginCmd {
+    string user_name = 1;
+    string password  = 2;
+}
+
+message Login {
+    string bearer_token = 1;
+}
+
+message GetUserQry {
+    string id = 1;
+}
+
+message GetUser {
+    User user = 1;
+}
+

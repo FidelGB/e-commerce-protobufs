@@ -1,0 +1,11 @@
+syntax = "proto3";
+import "protos/users.proto";
+import "protos/commons.proto";
+
+package com.ecommerce.protos;
+
+service Users {
+    rpc CreateUser(CreateUserCmd) returns (Ok) {};
+    rpc Login(LoginCmd) returns (Login) {};
+    rpc GetUser(GetUserQry) returns (GetUser) {};
+}
