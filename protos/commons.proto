@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package protos;
+package com.ecommerce.proto.commons;
 
 message Ok {
     string message = 1;

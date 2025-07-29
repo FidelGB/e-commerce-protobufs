@@ -2,10 +2,10 @@ syntax = "proto3";
 import "protos/users.proto";
 import "protos/commons.proto";
 
-package com.ecommerce.protos;
+package com.ecommerce.proto.api;
 
 service Users {
-    rpc CreateUser(CreateUserCmd) returns (Ok) {};
-    rpc Login(LoginCmd) returns (Login) {};
-    rpc GetUser(GetUserQry) returns (GetUser) {};
+    rpc CreateUser(users.CreateUserCmd) returns (commons.Ok) {};
+    rpc Login(users.LoginCmd) returns (users.Login) {};
+    rpc GetUser(users.GetUserQry) returns (users.GetUser) {};
 }
