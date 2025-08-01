@@ -4,7 +4,7 @@ import "protos/commons.proto";
 
 package com.ecommerce.proto.api;
 
-service Users {
+service UsersService {
     rpc CreateUser(users.CreateUserCmd) returns (commons.Ok) {};
     rpc Login(users.LoginCmd) returns (users.Login) {};
     rpc GetUser(users.GetUserQry) returns (users.GetUser) {};
